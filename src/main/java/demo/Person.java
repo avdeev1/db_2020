@@ -1,6 +1,5 @@
 package demo;
 
-import lombok.Data;
 
 /**
  * @author Evgeny Borisov
