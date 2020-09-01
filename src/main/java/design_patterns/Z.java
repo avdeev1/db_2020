@@ -16,6 +16,6 @@ public class Z {
         Game game = new Chess(john, james);
         game = new Football();
 
-        game.play();
+//        game.play();
     }
 }
