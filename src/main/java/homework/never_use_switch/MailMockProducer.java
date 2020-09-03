@@ -13,6 +13,7 @@ public class MailMockProducer {
     private MailDistributor mailDistributor = new MailDistributor();
     private Faker faker = new Faker();
     private DataFactory dataFactory = new DataFactory();
+    private MailMessagesFactory factory = new MailMessagesFactory();
 
 
     @SneakyThrows
@@ -23,7 +24,7 @@ public class MailMockProducer {
                     .email(dataFactory.getEmailAddress())
                     .mailType(mailType)
                     .text(faker.chuckNorris().fact()).build();
-            mailDistributor.sendMailInfo(mailInfo);
+            mailDistributor.sendMailInfo(factory.getHandlers(), mailInfo);
             Thread.sleep(1000);
         }
     }
