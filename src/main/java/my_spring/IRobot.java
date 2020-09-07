@@ -10,6 +10,10 @@ public class IRobot {
     @InjectByType
     private Cleaner cleaner;
 
+    public IRobot() {
+        InjectionService.injectValues(this);
+    }
+
     public void cleanRoom() {
         speaker.speak("Я начал уборку");
         cleaner.clean();
